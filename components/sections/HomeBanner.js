@@ -1,9 +1,9 @@
 import React from 'react';
 import Image from "next/image";
-import BannerImage from "../../public/assets/images/banner.webp";
 import SearchWithDropdown from "../forms/SearchWithDropdown";
 import Button from "../forms/Button";
 
+import BannerImage from "../../public/assets/images/banner.webp";
 import User01 from "../../public/assets/images/user-01.webp";
 import User02 from "../../public/assets/images/user-02.webp";
 import User03 from "../../public/assets/images/user-03.webp";

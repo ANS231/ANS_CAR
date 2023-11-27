@@ -20,7 +20,7 @@ const Checkbox = ({
         <div className="w-5 h-5 min-w-[20px] mr-3 border border-slate-300 rounded flex items-center justify-center text-sm bg-white text-black/0 peer-checked:bg-magenta-500 peer-checked:border-magenta-500 peer-checked:text-white">
           <i className="fa-light fa-fw fa-check"></i>
         </div>
-        <div className={classNames("text-sm text-slate-800 w-full", checkboxLableClass)}>{checkboxLabel}</div>
+        <div className={classNames("text-sm text-black w-full", checkboxLableClass)}>{checkboxLabel}</div>
       </div>
     </>
   );

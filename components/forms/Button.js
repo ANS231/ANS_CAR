@@ -35,7 +35,7 @@ const Button = ({
               <i className={classNames("fa-fw", buttonIcon)}></i>
             }
             {buttonLabel &&
-              <span className={classNames("text-base transition-all duration-200", buttonLabelClasses)}>{buttonLabel}</span>
+              <span className={classNames("text-base transition-all duration-200 block !leading-none", buttonLabelClasses)}>{buttonLabel}</span>
             }
             {buttonIconPosition === 'right' &&
               <i className={classNames("fa-fw", buttonIcon)}></i>
@@ -55,7 +55,7 @@ const Button = ({
               <i className={classNames("fa-fw", buttonIcon)}></i>
             }
             {buttonLabel &&
-              <span className={classNames("text-base transition-all duration-200", buttonLabelClasses)}>{buttonLabel}</span>
+              <span className={classNames("text-base transition-all duration-200 block !leading-none", buttonLabelClasses)}>{buttonLabel}</span>
             }
             {buttonIconPosition === 'right' &&
               <i className={classNames("fa-fw", buttonIcon)}></i>

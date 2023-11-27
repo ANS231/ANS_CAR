@@ -32,12 +32,12 @@ const Input = ({
   return (
     <>
       {label &&
-        <div className={classNames("text-sm font-medium text-slate-950 mb-1", labelClasses, isDisabled?"opacity-50":"opacity-100")}>{label}</div>
+        <div className={classNames("text-sm font-semibold text-black", labelClasses, isDisabled?"opacity-50":"opacity-100")}>{label}</div>
       }
       <div className={classNames("relative flex", isDisabled?"opacity-50":"opacity-100")}>
         {isInputGroup && inputGroupPosition === 'left' &&
           <div className={classNames(
-            "w-10 min-w-[40px] flex items-center justify-center border border-slate-200 rounded-xl rounded-r-none bg-white text-magenta-500 text-base",
+            "w-10 min-w-[40px] flex items-center justify-center border border-slate-200 rounded-lg rounded-r-none bg-white text-magenta-500 text-base focus:border-magenta-500",
             inputGroupIconClass
           )}>
             <i className={classNames("fa-fw", inputGroupIcon)}></i>
@@ -50,7 +50,7 @@ const Input = ({
                 type={inputType}
                 ref={passwordInput}
                 className={classNames(
-                  "w-full h-12 rounded-xl bg-white border border-slate-200 px-3 text-sm text-slate-950 !ring-0 !outline-0 focus:border-slate-200 focus:bg-white transition-all duration-200",
+                  "w-full h-10 rounded-lg bg-white border border-slate-200 px-3 text-base font-medium text-black !ring-0 !outline-0 focus:border-slate-200 focus:bg-white transition-all duration-200",
                   isDisabled?"!bg-slate-100":"",
                   inputClasses,
                   (isInputGroup ? (
@@ -70,7 +70,7 @@ const Input = ({
                 type={inputType}
                 ref={passwordInput}
                 className={classNames(
-                  "w-full h-12 rounded-xl bg-white border border-slate-200 px-3 text-sm text-slate-950 !ring-0 !outline-0 focus:border-slate-200 focus:bg-white transition-all duration-200",
+                  "w-full h-10 rounded-lg bg-white border border-slate-200 px-3 text-base font-medium text-black !ring-0 !outline-0 focus:border-slate-200 focus:bg-white transition-all duration-200",
                   inputClasses,
                   (isInputGroup ? (
                     (inputGroupPosition === 'left') ? "!border-l-0 !rounded-l-none -ml-[1px] pl-0" : ""
@@ -92,7 +92,7 @@ const Input = ({
           </div>
         </div>
         {isInputGroup && inputGroupPosition === 'right' &&
-          <div className="w-10 min-w-[40px] flex items-center justify-center border border-slate-200 rounded-md rounded-l-none bg-slate-50 text-sm text-slate-500">
+          <div className="w-10 min-w-[40px] flex items-center justify-center border border-slate-200 rounded-lg rounded-l-none bg-slate-50 text-sm text-slate-500 focus:border-magenta-500">
             <i className={classNames("fa-fw", inputGroupIcon)}></i>
           </div>
         }

@@ -13,11 +13,13 @@ import UserImage2 from "../../public/assets/images/user-02.webp";
 import UserImage3 from "../../public/assets/images/user-03.webp";
 import UserImage4 from "../../public/assets/images/user-04.webp";
 import UserImage5 from "../../public/assets/images/user-05.webp";
+import AuthenticationModal from "@/components/auth/AuthenticationModal";
 
 const Header = () => {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
-  const [isLoggedIn, setILoggedIn] = useState(true);
+  const [isLoggedIn, setILoggedIn] = useState(false);
+  const [isAuthModalOpen, setAuthModalIsOpen] = useState(false);
 
   const userMenu = {
     image:UserImage1,
@@ -181,6 +183,7 @@ const Header = () => {
                     buttonClasses={"!rounded-full !px-8 !bg-green-500"}
                     buttonLabel={"Sign in"}
                     buttonLabelClasses={"font-semibold uppercase text-lg"}
+                    buttonFunction={() => setAuthModalIsOpen(true)}
                   />
                 </>
               )}
@@ -189,6 +192,7 @@ const Header = () => {
           </div>
         </div>
       </header>
+      <AuthenticationModal isOpen={isAuthModalOpen} setIsOpen={setAuthModalIsOpen}/>
     </>
   );
 };

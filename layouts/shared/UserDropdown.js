@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { Menu, Transition } from "@headlessui/react";
+import { usePathname } from "next/navigation";
 import { bottom } from "@popperjs/core";
 import { usePopper } from "react-popper";
 import Link from "next/link";
@@ -7,8 +8,9 @@ import Image from "next/image";
 import { classNames } from "@/helpers/classNames";
 
 
-const UserDropdown = ({ data, xPlacement, ...props }) => {
 
+const UserDropdown = ({ data, xPlacement, ...props }) => {
+  const pathname = usePathname();
   const popperElRef = useRef(null);
   const [targetElement, setTargetElement] = useState(null);
   const [popperElement, setPopperElement] = useState(null);
@@ -41,7 +43,11 @@ const UserDropdown = ({ data, xPlacement, ...props }) => {
                 <div className="w-10 h-10 min-w-[40px] overflow-hidden rounded-full border-2 border-magenta-500">
                   <Image src={data.image} alt={data.name} width={'100%'} height={'100%'} effect={'blur'} classes={'object-cover'}/>
                 </div>
-                <div className={classNames("text-lg font-semibold mx-2 transition-all duration-200", props.scrolled?"text-black":"text-white")}>{data.name}</div>
+                <div className={classNames(
+                  "text-lg font-semibold mx-2 transition-all duration-200", 
+                  props.scrolled?"text-black":"text-white",
+                  pathname !== "/"?"!text-black":""
+                  )}>{data.name}</div>
                 {/* <div className="text-xs text-slate-400">
                   <i className={"fa-light fa-fw " + (open?'fa-chevron-up':'fa-chevron-down')}></i>
                 </div> */}

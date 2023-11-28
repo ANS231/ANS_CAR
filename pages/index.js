@@ -1,11 +1,11 @@
 import Layout from "@/layouts/Layout";
-import HomeBanner from "@/components/sections/HomeBanner";
-import HomeAbout from "@/components/sections/HomeAbout";
-import HomeServices from "@/components/sections/HomeServices";
-import HomeHowItWorks from "@/components/sections/HomeHowItWorks";
-import HomeCTA from "@/components/sections/HomeCTA";
-import HomeInspiration from "@/components/sections/HomeInspiration";
-import HomeEvents from "@/components/sections/HomeEvents";
+import HomeBanner from "@/components/sections/Home/HomeBanner";
+import HomeAbout from "@/components/sections/Home/HomeAbout";
+import HomeServices from "@/components/sections/Home/HomeServices";
+import HomeHowItWorks from "@/components/sections/Home/HomeHowItWorks";
+import HomeCTA from "@/components/sections/Home/HomeCTA";
+import HomeInspiration from "@/components/sections/Home/HomeInspiration";
+import HomeEvents from "@/components/sections/Home/HomeEvents";
 
 export default function Home() {
   return (

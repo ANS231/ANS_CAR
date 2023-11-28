@@ -1,11 +1,13 @@
 import { Fragment, useState } from 'react';
 import Image from "next/image";
 import { Dialog, Transition } from '@headlessui/react';
+import AuthSignIn from "../sections/Auth/AuthSignIn";
+import AuthSignUp from "../sections/Auth/AuthSignUp";
+import AuthForgotPassword from "../sections/Auth/AuthForgotPassword";
+import AuthVerifyCode from "../sections/Auth/AuthVerifyCode";
+import AuthSetPassword from "../sections/Auth/AuthSetPassword";
 
 import BannerImage from "../../public/assets/images/banner.webp";
-import AuthSignIn from "../sections/AuthSignIn";
-import AuthSignUp from "../sections/AuthSignUp";
-import AuthForgotPassword from "../sections/AuthForgotPassword";
 
 const AuthenticationModal = ({ isOpen, setIsOpen }) => {
   const [switchView, setSwitchView] = useState("signin");
@@ -53,6 +55,12 @@ const AuthenticationModal = ({ isOpen, setIsOpen }) => {
                       }
                       {switchView === 'forgot-password' &&
                         <AuthForgotPassword setSwitchView={setSwitchView}/>
+                      }
+                      {switchView === 'verify-code' && 
+                        <AuthVerifyCode setSwitchView={setSwitchView}/>
+                      }
+                      {switchView === 'set-password' && 
+                        <AuthSetPassword setSwitchView={setSwitchView}/>
                       }
                     </div>
                   </div>

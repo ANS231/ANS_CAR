@@ -29,7 +29,7 @@ const HomeHowItWorks = () => {
   
   return (
     <>
-      <section className="relative py-20 z-0 bg-white overflow-hidden">
+      <section className="relative py-20 z-0 bg-neutral-100 overflow-hidden">
         <div className="w-full px-4 sm:max-w-xl md:max-w-3xl lg:max-w-5xl xl:max-w-7xl 2xl:max-w-8xl 3xl:max-w-9xl mx-auto">
           <div className="space-y-5 text-center max-w-5xl mx-auto mb-16">
             <h2 className="text-black text-5xl uppercase font-bold leading-none tracking-tight" dangerouslySetInnerHTML={{__html:howItWorksData.title}}></h2>

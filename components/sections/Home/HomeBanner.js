@@ -92,8 +92,8 @@ const HomeBanner = () => {
   ]
   return (
     <>
-      <section className="relative h-screen py-32 flex flex-col justify-center z-[1]">
-        <div className="absolute shadow-inner top-0 left-0 z-[-1] w-full h-full rounded-bl-[320px] overflow-hidden after:content-[''] after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-gradient-to-b from-slate-950/90 via-slate-950/40 to-slate-950/60">
+      <section className="relative h-screen py-32 flex flex-col justify-center z-[1] bg-neutral-100">
+        <div className="absolute shadow-inner top-0 left-0 z-[-1] w-full h-full rounded-bl-[240px] overflow-hidden after:content-[''] after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-gradient-to-b from-slate-950/90 via-slate-950/40 to-slate-950/60">
           <Image src={bannerData.image} alt="" fill={false} className="w-full h-full object-cover" />
         </div>
         <div className="w-full px-4 sm:max-w-xl md:max-w-3xl lg:max-w-5xl xl:max-w-7xl 2xl:max-w-8xl 3xl:max-w-9xl mx-auto">
@@ -110,9 +110,9 @@ const HomeBanner = () => {
               <div className="flex items-center gap-10">
                 <div className="w-full flex-shrink">
                   <SearchWithDropdown
-                    divClasses={"!border-slate-100 !bg-slate-100"}
+                    divClasses={"!border-slate-100 !bg-neutral-100"}
                     iconPosition={"right"}
-                    iconClasses={"!text-black !bg-slate-100"}
+                    iconClasses={"!text-black !bg-neutral-100"}
                     placeholder={"What event are you searching for?"}
                     dropdownData={dropdownData}
                   />

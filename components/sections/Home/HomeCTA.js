@@ -12,7 +12,7 @@ const HomeCTA = () => {
   }
   return (
     <>
-      <section className="relative py-32 flex flex-col justify-center z-[1]">
+      <section className="relative py-32 flex flex-col justify-center z-[1] bg-neutral-100">
         <div className="absolute shadow-inner top-0 left-0 z-[-1] w-full h-full rounded-br-[320px] overflow-hidden after:content-[''] after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-gradient-to-b from-slate-950/90 via-slate-950/40 to-slate-950/90">
           <Image src={ctaData.image} alt="" fill={false} className="w-full h-full object-cover" />
         </div>

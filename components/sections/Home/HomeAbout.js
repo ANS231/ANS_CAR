@@ -16,7 +16,7 @@ const HomeAbout = () => {
 
   return (
     <>
-      <section className="relative !pt-40 py-20 z-0">
+      <section className="relative !pt-40 py-20 z-0 bg-neutral-100">
         <div className="w-full px-4 sm:max-w-xl md:max-w-3xl lg:max-w-5xl xl:max-w-7xl 2xl:max-w-8xl 3xl:max-w-9xl mx-auto">
           <div className="flex items-center gap-20 justify-between max-w-6xl mx-auto">
             <div className="w-2/3 flex-shrink gap-5">
@@ -30,7 +30,7 @@ const HomeAbout = () => {
               <div className="flex flex-wrap justify-end gap-5">
                 {aboutData.features.map((item, index) => (
                 <div className="relative aspect-square w-40 flex" key={index}>
-                  <div className="relative w-full flex flex-col py-6 px-4 items-center text-center bg-white shadow-md border border-slate-100 rounded-lg overflow-hidden hover:bg-magenta-500 hover:border-magenta-500 group transition-all duration-200">
+                  <div className="relative w-full flex flex-col py-6 px-4 items-center text-center bg-white shadow-md border border-neutral-50 rounded-lg overflow-hidden hover:bg-magenta-500 hover:border-magenta-500 group transition-all duration-200">
                     <div className="text-5xl text-magenta-500 my-auto group-hover:text-white transition-all duration-200"><i className={classNames("fa-light fa-fw", item.icon)}></i></div>
                     <div className="text-base uppercase font-semibold text-black !leading-none mt-auto group-hover:text-white transition-all duration-200">{item.label}</div>
                   </div>

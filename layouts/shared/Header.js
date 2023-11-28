@@ -18,7 +18,7 @@ import AuthenticationModal from "@/components/auth/AuthenticationModal";
 const Header = () => {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
-  const [isLoggedIn, setILoggedIn] = useState(true);
+  const [isLoggedIn, setILoggedIn] = useState(false);
   const [isAuthModalOpen, setAuthModalIsOpen] = useState(false);
 
   const userMenu = {
@@ -26,9 +26,9 @@ const Header = () => {
     name:"Tony C. German",
     menuData:[
       {label:"Account", icon:"fa-user-large text-magenta-500", link:"/user/account", standout:false },
-      {label:"Settings", icon:"fa-sliders text-magenta-500", link:"/", standout:false },
-      {label:"My Booking", icon:"fa-party-horn text-magenta-500", link:"/", standout:false },
-      {label:"Transactions", icon:"fa-coins text-magenta-500", link:"/", standout:false },
+      {label:"Settings", icon:"fa-sliders text-magenta-500", link:"/user/settings", standout:false },
+      {label:"My Booking", icon:"fa-party-horn text-magenta-500", link:"/user/bookings", standout:false },
+      {label:"Transactions", icon:"fa-coins text-magenta-500", link:"/user/transactions", standout:false },
       {label:"Logout", icon:"fa-arrow-right-from-bracket", onclick:() => {}, standout:true },
     ]
   }

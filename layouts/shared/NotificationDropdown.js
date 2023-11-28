@@ -1,13 +1,15 @@
 import React, { useRef, useState } from 'react';
 import { Menu, Transition } from "@headlessui/react";
+import { usePathname } from "next/navigation";
 import { bottom } from "@popperjs/core";
 import { usePopper } from "react-popper";
 import Link from "next/link";
 import { classNames } from "@/helpers/classNames";
 import Image from "next/image";
 
-const NotificationDropdown = ({ data, xPlacement, ...props }) => {
 
+const NotificationDropdown = ({ data, xPlacement, ...props }) => {
+  const pathname = usePathname();
   const popperElRef = useRef(null);
   const [targetElement, setTargetElement] = useState(null);
   const [popperElement, setPopperElement] = useState(null);
@@ -36,7 +38,11 @@ const NotificationDropdown = ({ data, xPlacement, ...props }) => {
         {({ open }) => (
           <>
             <Menu.Button ref={setTargetElement} className="flex items-center">
-              <div className={classNames("relative w-full h-10 flex items-center justify-center focus:ring-0 transition-all duration-200 text-2xl", props.scrolled?"text-black":"text-white")}>
+              <div className={classNames(
+                "relative w-full h-10 flex items-center justify-center focus:ring-0 transition-all duration-200 text-2xl", 
+                props.scrolled?"text-black":"text-white",
+                pathname !== "/"?"!text-black":""
+                )}>
                 <i className="fa-regular fa-fw fa-bell"></i>
                 {data.count > 0 &&
                 <span className="absolute top-0.5 -right-1 w-5 h-5 flex items-center justify-center bg-magenta-500 rounded-full text-xs font-medium leading-none pt-0.5 text-white">{data.count}</span>

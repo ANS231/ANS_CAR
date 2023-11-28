@@ -1,5 +1,5 @@
 import React from 'react';
-import HowItWorksItem from "../items/HowItWorksItem";
+import HowItWorksItem from "../../items/HowItWorksItem";
 
 const HomeHowItWorks = () => {
   const howItWorksData = {

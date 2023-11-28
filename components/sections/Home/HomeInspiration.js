@@ -1,5 +1,5 @@
 import React from 'react';
-import InspirationItem from "../items/InspirationItem";
+import InspirationItem from "../../items/InspirationItem";
 
 const HomeInspiration = () => {
   const inspirationData = {

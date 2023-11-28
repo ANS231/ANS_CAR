@@ -1,15 +1,15 @@
 import React from 'react';
 import Image from "next/image";
-import ServiceBoxItem from "../items/ServiceBoxItem";
+import ServiceBoxItem from "../../items/ServiceBoxItem";
 
-import TextureTop from "../../public/assets/images/texture-top.webp";
-import TextureBottom from "../../public/assets/images/texture-bottom.webp";
-import ServiceImage1 from "../../public/assets/images/services-01.webp";
-import ServiceImage2 from "../../public/assets/images/services-02.webp";
-import ServiceImage3 from "../../public/assets/images/services-03.webp";
-import ServiceImage4 from "../../public/assets/images/services-04.webp";
-import ServiceImage5 from "../../public/assets/images/services-05.webp";
-import ServiceImage6 from "../../public/assets/images/services-06.webp";
+import TextureTop from "../../../public/assets/images/texture-top.webp";
+import TextureBottom from "../../../public/assets/images/texture-bottom.webp";
+import ServiceImage1 from "../../../public/assets/images/services-01.webp";
+import ServiceImage2 from "../../../public/assets/images/services-02.webp";
+import ServiceImage3 from "../../../public/assets/images/services-03.webp";
+import ServiceImage4 from "../../../public/assets/images/services-04.webp";
+import ServiceImage5 from "../../../public/assets/images/services-05.webp";
+import ServiceImage6 from "../../../public/assets/images/services-06.webp";
 
 
 const HomeServices = () => {

@@ -1,7 +1,8 @@
 import React from 'react';
 import Image from "next/image";
-import CTAImage from "../../public/assets/images/bg-cta.webp";
-import Button from "../forms/Button";
+import Button from "../../forms/Button";
+
+import CTAImage from "../../../public/assets/images/bg-cta.webp";
 
 const HomeCTA = () => {
   const ctaData = {

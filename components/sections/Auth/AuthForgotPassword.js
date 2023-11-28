@@ -1,6 +1,6 @@
 import React from 'react';
-import Button from "../forms/Button";
-import Input from "../forms/Input";
+import Button from "../../forms/Button";
+import Input from "../../forms/Input";
 
 
 const AuthForgotPassword = ({setSwitchView}) => {
@@ -30,7 +30,7 @@ const AuthForgotPassword = ({setSwitchView}) => {
             buttonLabelClasses={"font-semibold uppercase text-xl"}
             buttonIcon={"fa-regular fa-key"}
             buttonIconPosition={"right"}
-            buttonFunction={() => {}}
+            buttonFunction={() => setSwitchView('verify-code')}
           />
         </div>
         <div className="relative !mt-8">

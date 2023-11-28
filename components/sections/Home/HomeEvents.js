@@ -1,15 +1,14 @@
 import React from 'react';
 import Image from "next/image";
-import ServiceBoxItem from "../items/ServiceBoxItem";
+import EventItem from "../../items/EventItem";
+import TextureTop from "../../../public/assets/images/texture-top.webp";
+import TextureBottom from "../../../public/assets/images/texture-bottom.webp";
+import EventImage1 from "../../../public/assets/images/events-01.webp";
+import EventImage2 from "../../../public/assets/images/events-02.webp";
+import EventImage3 from "../../../public/assets/images/events-03.webp";
+import EventImage4 from "../../../public/assets/images/events-04.webp";
+import EventImage5 from "../../../public/assets/images/events-05.webp";
 
-import TextureTop from "../../public/assets/images/texture-top.webp";
-import TextureBottom from "../../public/assets/images/texture-bottom.webp";
-import EventImage1 from "../../public/assets/images/events-01.webp";
-import EventImage2 from "../../public/assets/images/events-02.webp";
-import EventImage3 from "../../public/assets/images/events-03.webp";
-import EventImage4 from "../../public/assets/images/events-04.webp";
-import EventImage5 from "../../public/assets/images/events-05.webp";
-import EventItem from "../items/EventItem";
 
 const HomeEvents = () => {
   const eventsData = {

@@ -1,20 +1,20 @@
 import React from 'react';
 import Image from "next/image";
 import Link from "next/link";
-import Button from "../forms/Button";
-import Input from "../forms/Input";
-import Checkbox from "../forms/Checkbox";
+import Button from "../../forms/Button";
+import Input from "../../forms/Input";
+import Checkbox from "../../forms/Checkbox";
 
-import Google from "../../public/assets/images/google.svg"
-import Facebook from "../../public/assets/images/facebook.svg"
+import Google from "../../../public/assets/images/google.svg"
+import Facebook from "../../../public/assets/images/facebook.svg"
 
-const AuthSignUp = ({setSwitchView}) => {
+const AuthSignIn = ({setSwitchView}) => {
   return (
     <>
       <div className="space-y-2">
-        <h2 className="text-3xl font-bold uppercase text-black">Signup</h2>
+        <h2 className="text-3xl font-bold uppercase text-black">Signin</h2>
         <div className="text-lg font-medium !leading-none text-black">
-          <p>Use your credential to signup for a new account</p>
+          <p>Use your credential to signin into your account</p>
         </div>
       </div>
       <div className="space-y-4">
@@ -23,16 +23,7 @@ const AuthSignUp = ({setSwitchView}) => {
             isInputGroup={true}
             inputGroupIcon={"fa-regular fa-user"}
             inputGroupPosition={"left"}
-            label={"Name"}
-            inputType={"text"}
-          />
-        </div>
-        <div className="relative">
-          <Input
-            isInputGroup={true}
-            inputGroupIcon={"fa-regular fa-envelope"}
-            inputGroupPosition={"left"}
-            label={"Email address"}
+            label={"Username / Email address"}
             inputType={"email"}
           />
         </div>
@@ -45,20 +36,29 @@ const AuthSignUp = ({setSwitchView}) => {
             inputType={"password"}
           />
         </div>
-        <div className="relative">
-          <Input
-            isInputGroup={true}
-            inputGroupIcon={"fa-regular fa-key"}
-            inputGroupPosition={"left"}
-            label={"Confirm Password"}
-            inputType={"password"}
-          />
+        <div className="relative flex justify-between">
+          <div className="relative">
+            <Checkbox
+              checkboxLabel={"Remember me"}
+              checkboxLableClass={"!font-semibold"}
+            />
+          </div>
+          <div className="relative">
+            <Button
+              buttonClasses={"!rounded-none !px-0 !bg-transparent !h-auto !text-black hover:!text-magenta-500 !gap-1"}
+              buttonLabel={"Forgot Password"}
+              buttonLabelClasses={"font-semibold !text-sm duration-0"}
+              buttonIcon={"fa-regular fa-circle-question text-sm"}
+              buttonIconPosition={"left"}
+              buttonFunction={() => setSwitchView("forgot-password")}
+            />
+          </div>
         </div>
         <div className="relative">
           <Button
             buttonEffect="filled"
             buttonClasses={"!rounded-full !px-8 w-full"}
-            buttonLabel={"Signup"}
+            buttonLabel={"Signin"}
             buttonLabelClasses={"font-semibold uppercase text-xl"}
             buttonIcon={"fa-regular fa-arrow-right-to-bracket"}
             buttonIconPosition={"right"}
@@ -84,12 +84,12 @@ const AuthSignUp = ({setSwitchView}) => {
         </div>
         <div className="relative !mt-8">
           <div className="text-base font-medium text-center">
-            Already have an account?
+            Don't have an account?
             <Button
               buttonClasses={"!rounded-none !px-0 !bg-transparent !h-auto !text-magenta-500 hover:!text-magenta-500 !gap-1 !inline-flex mx-1"}
-              buttonLabel={"Signin"}
+              buttonLabel={"Signup"}
               buttonLabelClasses={"font-semibold !text-base duration-0"}
-              buttonFunction={() => setSwitchView("signin")}
+              buttonFunction={() => setSwitchView("signup")}
             />
             here
           </div>
@@ -99,4 +99,4 @@ const AuthSignUp = ({setSwitchView}) => {
   );
 };
 
-export default AuthSignUp;
+export default AuthSignIn;

@@ -41,7 +41,7 @@ const NotificationDropdown = ({ data, xPlacement, ...props }) => {
               <div className={classNames(
                 "relative w-full h-10 flex items-center justify-center focus:ring-0 transition-all duration-200 text-2xl", 
                 props.scrolled?"text-black":"text-white",
-                pathname !== "/"?"!text-black":""
+                pathname.includes('/user')?"!text-black":""
                 )}>
                 <i className="fa-regular fa-fw fa-bell"></i>
                 {data.count > 0 &&

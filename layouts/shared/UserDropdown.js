@@ -46,7 +46,7 @@ const UserDropdown = ({ data, xPlacement, ...props }) => {
                 <div className={classNames(
                   "text-lg font-semibold mx-2 transition-all duration-200", 
                   props.scrolled?"text-black":"text-white",
-                  pathname !== "/"?"!text-black":""
+                  pathname.includes('/user')?"!text-black":""
                   )}>{data.name}</div>
                 {/* <div className="text-xs text-slate-400">
                   <i className={"fa-light fa-fw " + (open?'fa-chevron-up':'fa-chevron-down')}></i>

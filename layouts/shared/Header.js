@@ -18,7 +18,7 @@ import AuthenticationModal from "@/components/auth/AuthenticationModal";
 const Header = () => {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
-  const [isLoggedIn, setILoggedIn] = useState(false);
+  const [isLoggedIn, setILoggedIn] = useState(true);
   const [isAuthModalOpen, setAuthModalIsOpen] = useState(false);
 
   const userMenu = {
@@ -146,14 +146,14 @@ const Header = () => {
       <header className={classNames(
         "top-0 z-20 w-full transition-all duration-200", 
         scrolled?"bg-white py-3 shadow":"bg-transparent py-8",
-        pathname !== "/"?"sticky bg-white !py-3 shadow":"fixed left-0"
+        pathname.includes('/user')?"sticky bg-white !py-3 shadow":"fixed left-0"
       )}>
         <div className="w-full px-4 sm:max-w-xl md:max-w-3xl lg:max-w-5xl xl:max-w-7xl 2xl:max-w-8xl 3xl:max-w-9xl mx-auto">
           <div className="flex items-center justify-end">
             <div className={classNames(
               "max-w-xs mr-auto transition-all duration-200", 
               scrolled?"h-20":"h-32",
-              pathname !== "/"?"!h-20":""
+              pathname.includes('/user')?"!h-20":""
             )}>
               <Link href="/" className="block w-full h-full"><Image src={Logo} alt="Logo" className="w-full h-full object-contain" /></Link>
             </div>
@@ -165,7 +165,7 @@ const Header = () => {
                       <Link href={item.link} className={classNames(
                         "px-3 text-lg flex items-center space-x-1 font-semibold uppercase hover:text-magenta-500 transition-all duration-200", 
                           pathname === item.link?'!text-magenta-500':scrolled?'text-black':'text-white',
-                          pathname !== "/"?"!text-black hover:!text-magenta-500":""
+                          pathname.includes('/user')?"!text-black hover:!text-magenta-500":""
                         )} >
                         <i className={classNames("fa-regular fa-fw",item.icon)}></i>
                         <span className="text-lg">{item.name}</span>

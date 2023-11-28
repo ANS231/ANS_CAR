@@ -4,7 +4,10 @@ import Input from "@/components/forms/Input";
 
 const AccountSection = () => {
   const [isEdit, setIsEdit] = useState(false);
-  const [name, setName] = useState("Tony C. German");
+  const [isPasswordEdit, setIsPasswordEdit] = useState(false);
+  const [username, setUsername] = useState("tony.german");
+  const [firstname, setFirstName] = useState("Tony");
+  const [lastname, setLastName] = useState("German");
   const [email, setEmail] = useState("tony.german@mailinator.com");
   const [phone, setPhone] = useState("9836098360");
   const [address, setAddress] = useState("84 Cherry Tree Drive");
@@ -12,6 +15,9 @@ const AccountSection = () => {
   const [state, setState] = useState("FL");
   const [city, setCity] = useState("Jacksonville");
   const [zipcode, setZipcode] = useState("32207");
+  const [currentPassword, setCurrentPassword] = useState("00000000");
+  const [newPassword, setNewPassword] = useState("");
+  const [confirmNewPassword, setconfirmNewPassword] = useState("");
   return (
     <>
       <div className="relative bg-white shadow rounded-lg overflow-hidden py-4 px-8">
@@ -23,16 +29,16 @@ const AccountSection = () => {
             <div className="flex justify-between items-center mb-4">
               <h1 className="text-xl font-semibold text-black">Personal Informations</h1>
               {!isEdit &&
-              <div className="ml-auto">
-                <Button
-                  buttonClasses={"!rounded-none !px-0 w-full !h-6 !bg-transparent !text-magenta-500 !text-sm"}
-                  buttonLabel={"Edit"}
-                  buttonLabelClasses={"font-semibold text-base !leading-none"}
-                  buttonIcon={"fa-regular fa-user-pen"}
-                  buttonIconPosition={"left"}
-                  buttonFunction={() => setIsEdit(true)}
-                />
-              </div>
+                <div className="ml-auto">
+                  <Button
+                    buttonClasses={"!rounded-none !px-0 w-full !h-6 !bg-transparent !text-magenta-500 !text-sm"}
+                    buttonLabel={"Edit"}
+                    buttonLabelClasses={"font-semibold text-base !leading-none"}
+                    buttonIcon={"fa-regular fa-user-pen"}
+                    buttonIconPosition={"left"}
+                    buttonFunction={() => setIsEdit(true)}
+                  />
+                </div>
               }
             </div>
             <div className="w-full max-w-2xl">
@@ -42,12 +48,38 @@ const AccountSection = () => {
                     isInputGroup={true}
                     inputGroupIcon={"fa-regular fa-user"}
                     inputGroupPosition={"left"}
-                    label={"Name"}
+                    label={"Userame"}
                     labelClasses={"!text-base"}
                     inputType={"text"}
-                    inputValue={name}
-                    isDisabled={!isEdit}
+                    inputValue={username}
+                    isDisabled={true}
                   />
+                </div>
+                <div className="grid grid-cols-2 gap-5">
+                  <div className="relative">
+                    <Input
+                      isInputGroup={true}
+                      inputGroupIcon={"fa-regular fa-user"}
+                      inputGroupPosition={"left"}
+                      label={"First Name"}
+                      labelClasses={"!text-base"}
+                      inputType={"text"}
+                      inputValue={firstname}
+                      isDisabled={!isEdit}
+                    />
+                  </div>
+                  <div className="relative">
+                    <Input
+                      isInputGroup={true}
+                      inputGroupIcon={"fa-regular fa-user"}
+                      inputGroupPosition={"left"}
+                      label={"Last Name"}
+                      labelClasses={"!text-base"}
+                      inputType={"text"}
+                      inputValue={lastname}
+                      isDisabled={!isEdit}
+                    />
+                  </div>
                 </div>
                 <div className="grid grid-cols-2 gap-5">
                   <div className="relative">
@@ -128,32 +160,100 @@ const AccountSection = () => {
                   </div>
                 </div>
                 {isEdit &&
-                <div className="relative flex space-x-4">
-                  <Button
-                    buttonEffect="hollow"
-                    buttonClasses={"!rounded-full !h-10 !px-8"}
-                    buttonLabel={"Cancel"}
-                    buttonLabelClasses={"font-semibold"}
-                    buttonFunction={() => setIsEdit(false)}
-                  />
-                  <Button
-                    buttonEffect="filled"
-                    buttonClasses={"!rounded-full !h-10 !px-8"}
-                    buttonLabel={"Update"}
-                    buttonLabelClasses={"font-semibold"}
-                    buttonFunction={() => setIsEdit(false)}
-                  />
-                </div>
+                  <div className="relative flex space-x-4">
+                    <Button
+                      buttonEffect="hollow"
+                      buttonClasses={"!rounded-full !h-10 !px-8"}
+                      buttonLabel={"Cancel"}
+                      buttonLabelClasses={"font-semibold"}
+                      buttonFunction={() => setIsEdit(false)}
+                    />
+                    <Button
+                      buttonEffect="filled"
+                      buttonClasses={"!rounded-full !h-10 !px-8"}
+                      buttonLabel={"Update"}
+                      buttonLabelClasses={"font-semibold"}
+                      buttonFunction={() => setIsEdit(false)}
+                    />
+                  </div>
                 }
               </div>
             </div>
           </div>
           <div className="relative py-8">
             <div className="flex justify-between items-center mb-4">
-              <h1 className="text-xl font-semibold text-black">Payment Informations</h1>
+              <h1 className="text-xl font-semibold text-black">Password Informations</h1>
+              {!isPasswordEdit &&
+                <div className="ml-auto">
+                  <Button
+                    buttonClasses={"!rounded-none !px-0 w-full !h-6 !bg-transparent !text-magenta-500 !text-sm"}
+                    buttonLabel={"Edit"}
+                    buttonLabelClasses={"font-semibold text-base !leading-none"}
+                    buttonIcon={"fa-regular fa-user-pen"}
+                    buttonIconPosition={"left"}
+                    buttonFunction={() => setIsPasswordEdit(true)}
+                  />
+                </div>
+              }
             </div>
             <div className="w-full max-w-2xl">
-              
+              <div className="space-y-5">
+                <div className="relative">
+                  <Input
+                    isInputGroup={true}
+                    inputGroupIcon={"fa-regular fa-key"}
+                    inputGroupPosition={"left"}
+                    label={"Current Password"}
+                    labelClasses={"!text-base"}
+                    inputType={"password"}
+                    inputValue={currentPassword}
+                    isDisabled={!isPasswordEdit}
+                  />
+                </div>
+                <div className="relative">
+                  <Input
+                    isInputGroup={true}
+                    inputGroupIcon={"fa-regular fa-key"}
+                    inputGroupPosition={"left"}
+                    label={"New Password"}
+                    labelClasses={"!text-base"}
+                    inputType={"password"}
+                    inputValue={newPassword}
+                    isDisabled={!isPasswordEdit}
+                  />
+                </div>
+                <div className="relative">
+                  <Input
+                    isInputGroup={true}
+                    inputGroupIcon={"fa-regular fa-key"}
+                    inputGroupPosition={"left"}
+                    label={"Confirm New Password"}
+                    labelClasses={"!text-base"}
+                    inputType={"password"}
+                    inputValue={confirmNewPassword}
+                    isDisabled={!isPasswordEdit}
+                  />
+                </div>
+
+                {isPasswordEdit &&
+                  <div className="relative flex space-x-4">
+                    <Button
+                      buttonEffect="hollow"
+                      buttonClasses={"!rounded-full !h-10 !px-8"}
+                      buttonLabel={"Cancel"}
+                      buttonLabelClasses={"font-semibold"}
+                      buttonFunction={() => setIsPasswordEdit(false)}
+                    />
+                    <Button
+                      buttonEffect="filled"
+                      buttonClasses={"!rounded-full !h-10 !px-8"}
+                      buttonLabel={"Update"}
+                      buttonLabelClasses={"font-semibold"}
+                      buttonFunction={() => setIsPasswordEdit(false)}
+                    />
+                  </div>
+                }
+              </div>
             </div>
           </div>
         </div>

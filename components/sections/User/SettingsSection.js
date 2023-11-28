@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Button from "@/components/forms/Button";
 import Input from "@/components/forms/Input";
+import Checkbox from "@/components/forms/Checkbox";
 
 const SettingsSection = () => {
   return (
@@ -12,11 +13,26 @@ const SettingsSection = () => {
         <div className="divide-y divide-slate-200">
           <div className="relative py-8">
             <div className="flex justify-between items-center mb-4">
-              <h1 className="text-xl font-semibold text-black">Notification Settings</h1>
+              <h1 className="text-xl font-semibold text-black">General Settings</h1>
             </div>
             <div className="w-full max-w-2xl">
               <div className="space-y-5">
-                <div className="relative flex space-x-4">
+                <div className="relative">
+                  <Checkbox
+                    checkboxLabel={"Allow vendor/user to contact directly"}
+                  />
+                </div>
+                <div className="relative">
+                  <Checkbox
+                    checkboxLabel={"Show contact infrmations on profile"}
+                  />
+                </div>
+                <div className="relative">
+                  <Checkbox
+                    checkboxLabel={"Show past events on profile"}
+                  />
+                </div>
+                {/* <div className="relative flex space-x-4">
                   <Button
                     buttonEffect="hollow"
                     buttonClasses={"!rounded-full !h-10 !px-8"}
@@ -31,7 +47,37 @@ const SettingsSection = () => {
                     buttonLabelClasses={"font-semibold"}
                     buttonFunction={() => {}}
                   />
+                </div> */}
+              </div>
+            </div>
+          </div>
+          <div className="relative py-8">
+            <div className="flex justify-between items-center mb-4">
+              <h1 className="text-xl font-semibold text-black">Notification Settings</h1>
+            </div>
+            <div className="w-full max-w-2xl">
+              <div className="space-y-5">
+                <div className="relative">
+                  <Checkbox
+                    checkboxLabel={"Allow vendor/user notifications"}
+                  />
                 </div>
+                {/* <div className="relative flex space-x-4">
+                  <Button
+                    buttonEffect="hollow"
+                    buttonClasses={"!rounded-full !h-10 !px-8"}
+                    buttonLabel={"Cancel"}
+                    buttonLabelClasses={"font-semibold"}
+                    buttonFunction={() => {}}
+                  />
+                  <Button
+                    buttonEffect="filled"
+                    buttonClasses={"!rounded-full !h-10 !px-8"}
+                    buttonLabel={"Update"}
+                    buttonLabelClasses={"font-semibold"}
+                    buttonFunction={() => {}}
+                  />
+                </div> */}
               </div>
             </div>
           </div>

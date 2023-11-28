@@ -6,7 +6,7 @@ const FrontLayout = ({children}) => {
   return (
     <>
       <Header/>
-        <div className="relative">{children}</div>
+      {children}
       <Footer/>
     </>
   );

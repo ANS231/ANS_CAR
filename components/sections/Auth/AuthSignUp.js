@@ -7,7 +7,7 @@ import Input from "../../forms/Input";
 import Google from "../../../public/assets/images/google.svg"
 import Facebook from "../../../public/assets/images/facebook.svg"
 
-const AuthSignUp = ({setSwitchView}) => {
+const AuthSignUp = ({ setSwitchView }) => {
   return (
     <>
       <div className="space-y-2">
@@ -17,12 +17,32 @@ const AuthSignUp = ({setSwitchView}) => {
         </div>
       </div>
       <div className="space-y-4">
+        <div className="flex space-x-4">
+          <div className="relative">
+            <Input
+              isInputGroup={true}
+              inputGroupIcon={"fa-regular fa-user"}
+              inputGroupPosition={"left"}
+              label={"First Name"}
+              inputType={"text"}
+            />
+          </div>
+          <div className="relative">
+            <Input
+              isInputGroup={true}
+              inputGroupIcon={"fa-regular fa-user"}
+              inputGroupPosition={"left"}
+              label={"Last Name"}
+              inputType={"text"}
+            />
+          </div>
+        </div>
         <div className="relative">
           <Input
             isInputGroup={true}
             inputGroupIcon={"fa-regular fa-user"}
             inputGroupPosition={"left"}
-            label={"Name"}
+            label={"Username"}
             inputType={"text"}
           />
         </div>
@@ -61,7 +81,7 @@ const AuthSignUp = ({setSwitchView}) => {
             buttonLabelClasses={"font-semibold uppercase text-xl"}
             buttonIcon={"fa-regular fa-arrow-right-to-bracket"}
             buttonIconPosition={"right"}
-            buttonFunction={() => {}}
+            buttonFunction={() => { }}
           />
         </div>
         <div className="relative z-0 flex flex-col items-center space-y-4">
@@ -69,13 +89,13 @@ const AuthSignUp = ({setSwitchView}) => {
           <div className="flex items-center gap-2 w-full">
             <div className="relative w-full flex-shrink">
               <Link href="/" className="w-full h-10 bg-white space-x-4 border border-slate-200 flex items-center justify-center text-black font-semibold text-sm rounded-lg">
-                <Image src={Facebook} width={20} height={20} alt={"Facebook"}  className="object-contain"/>
+                <Image src={Facebook} width={20} height={20} alt={"Facebook"} className="object-contain" />
                 <span>Login with Facebook</span>
               </Link>
             </div>
             <div className="relative w-full flex-shrink">
               <Link href="/" className="w-full h-10 bg-white space-x-4 border border-slate-200 flex items-center justify-center text-black font-semibold text-sm rounded-lg">
-                <Image src={Google} width={20} height={20} alt={"Google"}  className="object-contain"/>
+                <Image src={Google} width={20} height={20} alt={"Google"} className="object-contain" />
                 <span>Login with Google</span>
               </Link>
             </div>

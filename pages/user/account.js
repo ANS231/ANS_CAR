@@ -1,10 +1,11 @@
 import React from 'react';
 import Layout from "@/layouts/Layout";
+import AccountSection from "@/components/sections/User/AccountSection";
 
 const Account = () => {
   return (
-    <Layout type={"FrontLayout"} pageTitle={"Account"}>
-      
+    <Layout type={"AuthLayout"} pageTitle={"Account"}>
+      <AccountSection/>
     </Layout>
   );
 };

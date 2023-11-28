@@ -94,7 +94,6 @@ const UserDropdown = ({ data, xPlacement, ...props }) => {
                           <div className="text-base">{item.label}</div>
                         </button>
                       )}
-                      
                     </Menu.Item>
                   ))}
                 </div>

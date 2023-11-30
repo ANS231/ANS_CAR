@@ -10,6 +10,8 @@ import ServiceImage3 from "../../../public/assets/images/services-03.webp";
 import ServiceImage4 from "../../../public/assets/images/services-04.webp";
 import ServiceImage5 from "../../../public/assets/images/services-05.webp";
 import ServiceImage6 from "../../../public/assets/images/services-06.webp";
+import ServiceImage7 from "../../../public/assets/images/services-07.webp";
+import ServiceImage8 from "../../../public/assets/images/services-08.webp";
 
 
 const HomeServices = () => {
@@ -53,6 +55,18 @@ const HomeServices = () => {
         description:"It is a long established fact that a reader will be distracted by the readable content",
         link:"/"
       },
+      {
+        image:ServiceImage7,
+        title:"Conferences",
+        description:"It is a long established fact that a reader will be distracted by the readable content",
+        link:"/"
+      },
+      {
+        image:ServiceImage8,
+        title:"Others",
+        description:"It is a long established fact that a reader will be distracted by the readable content",
+        link:"/"
+      },
     ]
   }
 
@@ -71,7 +85,7 @@ const HomeServices = () => {
             <div className="text-black text-xl font-medium !leading-normal" dangerouslySetInnerHTML={{__html:servicesData.description}}></div>
           </div>
           {servicesData.services.length > 0 &&
-          <div className="grid grid-cols-3 gap-6">
+          <div className="grid grid-cols-4 gap-6">
             {servicesData.services.map((item, index) => (
               <ServiceBoxItem key={index} data={item}/>
             ))}

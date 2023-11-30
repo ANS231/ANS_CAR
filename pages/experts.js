@@ -1,23 +1,23 @@
 import React from 'react';
 import Layout from "@/layouts/Layout";
 import PageBanner from "@/components/sections/Shared/PageBanner";
-import ServicesSection from "@/components/sections/Services/ServicesSection";
-import BannerImage from "../public/assets/images/banner.webp";
+import BannerImage from "../public/assets/images/bg-experts.webp";
+import ExpertsSection from "@/components/sections/Experts/ExpertsSection";
 
-const Services = () => {
+const Experts = () => {
   const bannerData = {
     image:BannerImage,
-    title:"Speakers",
+    title:"Expert Vendors",
     subtitle:"It is a long established fact that a reader",
   }
   return (
     <>
       <Layout type={"FrontLayout"} pageTitle={"Services"}>
         <PageBanner data={bannerData}/>
-        <ServicesSection/>
+        <ExpertsSection/>
       </Layout>
     </>
   );
 };
 
-export default Services;
+export default Experts;

@@ -31,21 +31,21 @@ const Tabs = ({
     <>
       <div className="relative">
         <div className={classNames("flex overflow-auto", navTabClass)}>
-          <nav className={classNames("flex bg-white shadow-lg mb-4 border border-slate-50 rounded-lg space-x-2")}>
+          <nav className={classNames("flex mb-4 space-x-4 border-b border-slate-200")}>
             {tabs.map((item, index) => (
               <button 
                 type="button" 
                 className={classNames(
-                  "relative px-5 py-2 rounded-md transition-all duration-200", 
-                  (item._id === selectedTab?._id)?"bg-magenta-500":"",
+                  "relative px-2 py-2 transition-all duration-200 border-b-2", 
+                  (item._id === selectedTab?._id)?"border-magenta-500":"border-transparent",
                   
                 )} 
                 key={index} 
                 onClick={() => handleTabSelection(item)}
               >
                 <div className={classNames(
-                  "whitespace-nowrap text-base transition-all duration-200",
-                  (item._id === selectedTab?._id)?"text-white":""
+                  "whitespace-nowrap text-lg font-semibold transition-all duration-200",
+                  (item._id === selectedTab?._id)?"text-magenta-500":"text-black"
                 )}>{item.name}</div>
               </button>
             ))}

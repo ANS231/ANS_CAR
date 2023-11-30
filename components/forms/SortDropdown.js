@@ -39,7 +39,12 @@ const SortDropdown = ({
     <Menu as="div">
       {({ open }) => (
         <>
-          <Menu.Button ref={setTargetElement} className="relative overflow-hidden flex justify-center items-center bg-magenta-500 text-white rounded-lg text-lg h-10 py-0 px-2 transition-all duration-200 min-w-[40px]">
+          <Menu.Button 
+            ref={setTargetElement} 
+            className={classNames(
+              "relative overflow-hidden flex justify-center items-center bg-magenta-500 text-white rounded-lg text-lg h-10 py-0 px-2 transition-all duration-200 min-w-[40px] font-medium"
+              )}
+          >
             <div className="flex items-center gap-2">
               {icon && <i className={classNames("fa-fw", sortIcon?sortIcon:icon)}></i>}
               {label && 
@@ -67,7 +72,7 @@ const SortDropdown = ({
                   {data.map((item, index) => (
                     <Menu.Item key={index}>
                       {({ active }) => (
-                        <button className={classNames("group flex w-full items-center rounded-md px-2 py-1.5 text-base space-x-2 transition-all duration-200", active ? 'bg-magenta-500 text-white' : 'text-slate-900')} onClick={() => {setSortName(item.label), setSortIcon(item.icon), item.click}}>
+                        <button className={classNames("group flex w-full items-center rounded px-2 py-1.5 text-base font-medium space-x-2 transition-all duration-200", active ? 'bg-magenta-500 text-white' : 'text-slate-900')} onClick={() => {setSortName(item.label), setSortIcon(item.icon), item.click}}>
                           {item.icon && <i className={classNames("fa-fw", item.icon)}></i>}
                           {item.label && <span className="inline-block text-sm">{item.label}</span>}
                         </button>

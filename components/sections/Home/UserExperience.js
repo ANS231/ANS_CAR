@@ -1,10 +1,11 @@
 import React from "react";
 import HowItWorksItem from "../../items/HowItWorksItem";
+import UserExperienceItem from "@/components/items/UserExperienceItem";
 
-const HomeHowItWorks = () => {
+const UserExperience = () => {
   const howItWorksData = {
     title:
-      "Facility <span class='text-magenta-500'>ANS Taxiwala</span> Provides",
+      "User Experience Taking <span class='text-magenta-500'>ANS Taxiwala</span> Services",
     description:
       "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less</p>",
     howItWorks: [
@@ -48,7 +49,7 @@ const HomeHowItWorks = () => {
           {howItWorksData.howItWorks.length > 0 && (
             <div className="grid grid-cols-3 gap-6">
               {howItWorksData.howItWorks.map((item, index) => (
-                <HowItWorksItem key={index} data={item} />
+                <UserExperienceItem key={index} data={item} />
               ))}
             </div>
           )}
@@ -58,4 +59,4 @@ const HomeHowItWorks = () => {
   );
 };
 
-export default HomeHowItWorks;
+export default UserExperience;

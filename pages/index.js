@@ -6,19 +6,21 @@ import HomeHowItWorks from "@/components/sections/Home/HomeHowItWorks";
 import HomeCTA from "@/components/sections/Home/HomeCTA";
 import HomeInspiration from "@/components/sections/Home/HomeInspiration";
 import HomeEvents from "@/components/sections/Home/HomeEvents";
+import UserExperience from "@/components/sections/Home/UserExperience";
 
 export default function Home() {
   return (
     <>
       <Layout type={"FrontLayout"} pageTitle={"Home"}>
-        <HomeBanner/>
-        <HomeAbout/>
-        <HomeServices/>
-        <HomeHowItWorks/>
-        <HomeCTA/>
-        <HomeInspiration/>
-        <HomeEvents/>
+        <HomeBanner />
+        {/* <HomeAbout/>
+        <HomeServices/> */}
+        <HomeHowItWorks />
+        <UserExperience />
+        {/* <HomeCTA/> */}
+        {/* <HomeInspiration/> */}
+        {/* <HomeEvents/> */}
       </Layout>
     </>
-  )
+  );
 }
